@@ -62,6 +62,10 @@ def process_text_file(file_path):
     return geojson
 
 def process_all_files_in_folder(input_folder_path,output_folder_path):
+     # Ensure the output directory exists, create if it doesn't
+    if not os.path.exists(output_folder_path):
+        os.makedirs(output_folder_path)
+        
     # List all text files in the folder
     for filename in os.listdir(input_folder_path):
         if filename.endswith('.txt'):
